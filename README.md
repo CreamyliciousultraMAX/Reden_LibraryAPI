@@ -56,7 +56,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Description**: User can input their username and password to create an account that will be saved on the database. 
 
 ### 📥 Sample JSON request:
-```bash
+```json
   {
     "username": "Super",
     "password": "Mario"
@@ -65,7 +65,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Response:**
 
     - **On Success**
-    ```bash
+    ```json
       {
         "status": "success",
         "data": null
@@ -73,7 +73,7 @@ The Library API uses **JWT** for secure authentication.
     ```
 
     - **On Error (Account Duplication)**
-    ```bash
+    ```json
       {
         "status": "fail",
         "data": {
@@ -88,7 +88,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Description**: User can input their username and password to access their created account based on their ceredentials saved on the database to create a session. 
 
 ### 📥 Sample JSON request:
-```bash
+```json
   {
     "username": "Super",
     "password": "Mario"
@@ -97,17 +97,17 @@ The Library API uses **JWT** for secure authentication.
 -  **Response:**
 
     - **On Success**
-    ```bash
+    ```json
       {
         "status": "success",
         "data": {
-          "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9. 
+          "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
         }
       }
     ```
 
     - **On Error**
-    ```bash
+    ```json
       {
         "status": "fail",
         "data": {
@@ -122,7 +122,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Description**: After the login of users, their credentials will be authenticated for them to access different functionalities.
 
 ### 📥 Sample JSON request:
-```bash
+```json
   {
     "username": "Super",
     "password": "Mario"
@@ -131,17 +131,17 @@ The Library API uses **JWT** for secure authentication.
 -  **Response:**
 
     - **On Success**
-    ```bash
+    ```json
       {
         "status": "success",
         "data": {
-          "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.
+          "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
         }
       }
     ```
 
     - **On Error**
-    ```bash
+    ```json
       {
         "status": "fail",
         "data": {
@@ -165,7 +165,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Response:**
 
     - **On Success**
-    ```bash
+    ```json
       {
         "status": "success",
         "data": {
@@ -176,7 +176,7 @@ The Library API uses **JWT** for secure authentication.
     ```
 
     - **On Error (Token Expired or Invalid Token)**
-    ```bash
+    ```json
       {
         "status": "fail",
         "data": {
@@ -192,7 +192,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Description**: Authors can input their username and password to create an account that will be saved on the database. 
 
 ### 📥 Sample JSON request:
-```bash
+```json
   {
     "username": "Son",
     "password": "Goku"
@@ -209,7 +209,7 @@ The Library API uses **JWT** for secure authentication.
     ```
 
     - **On Error (Account Duplication)**
-    ```bash
+    ```json
       {
         "status": "fail",
         "data": {
@@ -224,7 +224,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Description**: Author can login their own account based on their regestration credentials that is saved on the database.
 
 ### 📥 Sample JSON request:
-```bash
+```json
   {
     "username": "Son",
     "password": "Goku"
@@ -233,17 +233,17 @@ The Library API uses **JWT** for secure authentication.
 -  **Response:**
 
     - **On Success**
-    ```bash
+    ```json
       {
         "status": "Author Log In Successfully",
         "data": {
-          "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.
+          "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
         }
       }
     ```
 
     - **On Error (Account Duplication)**
-    ```bash
+    ```json
       {
         "status": "fail",
         "data": {
@@ -258,7 +258,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Description**: After the login of Authors, their credentials will be authenticated for them to access different functionalities.
 
 ### 📥 Sample JSON request:
-```bash
+```json
   {
     "username": "Son",
     "password": "Goku"
@@ -267,7 +267,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Response:**
 
     - **On Success**
-    ```bash
+    ```json
       {
         "status": "Author Authenticated",
         "data": {
@@ -277,7 +277,7 @@ The Library API uses **JWT** for secure authentication.
     ```
 
     - **On Error (Token Expired or Invalid Token)**
-    ```bash
+    ```json
       {
         "status": "fail",
         "data": {
@@ -292,7 +292,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Description**: After the author got authenticated the author can publish their own books and add their own title for their books.
 
 ### 📥 Sample JSON request:
-```bash
+```json
 {
     "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9",
     "title": "Dragon Ball Z"
@@ -301,7 +301,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Response:**
 
     - **On Success**
-    ```bash
+    ```json
       {
         "status": "success",
         "data": {
@@ -311,7 +311,7 @@ The Library API uses **JWT** for secure authentication.
     ```
 
     - **On Error (Token Expired or Invalid Token)**
-    ```bash
+    ```json
       {
         "status": "fail",
         "data": {
@@ -325,7 +325,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Description**: With proper authentication the author can delete their own books they posted.
 
 ### 📥 Sample JSON request:
-```bash
+```json
   {
       "bookid": 28,
       "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
@@ -334,7 +334,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Response:**
 
     - **On Success**
-    ```bash
+    ```json
     {
       "status": "success",
       "data": {
@@ -344,7 +344,7 @@ The Library API uses **JWT** for secure authentication.
     ```
 
     - **On Error (Token Expired or Invalid Token)**
-    ```bash
+    ```json
     {
       "status": "fail",
       "data": {
@@ -352,7 +352,7 @@ The Library API uses **JWT** for secure authentication.
       }
     }
     ```
-    ```bash
+    ```json
     {
       "status": "fail",
       "data": {
@@ -360,7 +360,7 @@ The Library API uses **JWT** for secure authentication.
       }
     }
     ```
-    ```bash
+    ```json
     {
       "status": "fail",
       "data": {
@@ -375,7 +375,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Description**: With proper authentication the users and authors can view the books being posted by the authors or other authors
 
 ### 📥 Sample JSON request:
-```bash
+```json
     {
         "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
     }
@@ -384,7 +384,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Response:**
 
     - **On Success**
-    ```bash
+    ```json
     {
       "status": "success",
       "data": [
@@ -397,7 +397,7 @@ The Library API uses **JWT** for secure authentication.
     ```
 
     - **On Error (Token Expired or Invalid Token)**
-    ```bash
+    ```json
     {
       "status": "fail",
       "data": {
@@ -411,7 +411,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Description**: With proper authentication the users and authors can view Authors or Athors can view other Authors that has created an account.
 
 ### 📥 Sample JSON request:
-```bash
+```json
   {
       "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
   }
@@ -419,7 +419,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Response:**
 
     - **On Success**
-    ```bash
+    ```json
     {
       "status": "success",
       "data": [
@@ -440,7 +440,7 @@ The Library API uses **JWT** for secure authentication.
     ```
 
     - **On Error (Token Expired or Invalid Token)**
-    ```bash
+    ```json
     {
       "status": "fail",
       "data": {
@@ -454,7 +454,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Description**: With proper authentication the users and authors can view Authors and the books that they posted.
 
 ### 📥 Sample JSON request:
-```bash
+```json
   {
       "authorid" : 19,
       "bookid": 30,
@@ -465,7 +465,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Response:**
 
     - **On Success**
-    ```bash
+    ```json
     {
       "status": "success",
       "data": {
@@ -482,21 +482,21 @@ The Library API uses **JWT** for secure authentication.
     ```
 
     - **On Error (Token Expired or Invalid Token)**
-    ```bash
+    ```json
     {
       "status": "fail",
       "message": "Author or Book not found"
     }
     ```
-    ```bash
+    ```json
     {
       "status": "fail",
       "message": "Invalid token, access denied"
     }
     ```
-    ```bash
-  {
-    "status": "fail",
-    "message": "Connection failed: Expired token"
-  }
+    ```json
+    {
+      "status": "fail",
+      "message": "Connection failed: Expired token"
+    }
     ```
