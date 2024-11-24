@@ -205,7 +205,7 @@ $app->post('/author/register', function (Request $request, Response $response, a
         $stmt = $conn->prepare("SELECT * FROM authors WHERE username = :uname");
         $stmt->execute([':uname' => $uname]);
         if ($stmt->fetch()) {
-            $response->getBody()->write(json_encode(["status" => "fail", "data" => ["title" => "Username of Author already exists"]]));
+            $response->getBody()->write(json_encode(["status" => "fail", "data" => ["title" => "Author name already exists"]]));
             return $response;
         }
 
@@ -247,7 +247,7 @@ $app->post('/author/login', function (Request $request, Response $response, arra
             $jwt = generateToken(["name" => $uname]);
             $response->getBody()->write(json_encode(["status" => "Author Log In Successfully", "data" => ["token" => $jwt]]));
         } else {
-            $response->getBody()->write(json_encode(["status" => "fail", "data" => ["title" => "Invalid credentials"]]));
+            $response->getBody()->write(json_encode(["status" => "fail", "data" => ["title" => "Authors credential is invalid"]]));
         }
     } catch (PDOException $e) {
         $response->getBody()->write(json_encode(["status" => "fail", "data" => ["title" => $e->getMessage()]]));
@@ -279,7 +279,7 @@ $app->post('/author/confirmation', function (Request $request, Response $respons
             $_SESSION['auth_token'] = $jwt; // Store the authentication token in the session
             $response->getBody()->write(json_encode(["status" => "Author Authenticated", "data" => ["token" => $jwt]]));
         } else {
-            $response->getBody()->write(json_encode(["status" => "fail", "data" => ["title" => "Authentication failed"]]));
+            $response->getBody()->write(json_encode(["status" => "fail", "data" => ["title" => "Author Authentication failed"]]));
         }
     } catch (PDOException $e) {
         $response->getBody()->write(json_encode(["status" => "fail", "data" => ["title" => $e->getMessage()]]));
@@ -583,7 +583,7 @@ $app->post('/book/author/view', function (Request $request, Response $response, 
             "message" => "Connection failed: " . $e->getMessage()
         ]));
     }
-});
+});                                                                     
 
 
 $app->run();
