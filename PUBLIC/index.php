@@ -196,7 +196,7 @@ $app->post('/author/register', function (Request $request, Response $response, a
     $data = json_decode($request->getBody());
     $uname = $data->username;
     $pass = $data->password;
-
+     
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
