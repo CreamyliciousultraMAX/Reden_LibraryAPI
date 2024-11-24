@@ -1,4 +1,4 @@
-# 🔗 LIBRARY API  
+# 📖🔗 LIBRARY API  
 
 A robust backend service designed to efficiently manage library resources. This project is ideal for developers building library management systems or similar applications.  
 
@@ -21,23 +21,23 @@ The **Library API** provides secure and flexible endpoints to manage books, auth
 
 ## 🔧 Technologies  
 
-- **PHP**: Core logic implemented using PHP.  
-- **Slim Framework**: Lightweight and flexible PHP framework.  
-- **Firebase JWT**: Manages token generation and validation.  
-- **PSR-7**: Standardized HTTP message interfaces.  
+- **🐘 PHP**: Core logic implemented using PHP.  
+- **🎯 Slim Framework**: Lightweight and flexible PHP framework.  
+- **🔥 Firebase JWT**: Manages token generation and validation.  
+- **📜 PSR-7**: Standardized HTTP message interfaces.  
 
 ---
 
 ## 🔑 Authentication  
 
-### Overview  
+### 🔍 **Overview**  
 The Library API uses **JWT** for secure authentication.  
 
 1. Clients include a token in the `Authorization` header of API requests.  
 2. Tokens are validated and revoked after one use.  
 3. Revoked tokens are tracked via PHP sessions for additional security.  
 
-### Token Workflow  
+### 🌀 **Token Workflow**  
 
 - **🎟️ Token Generation**: After successful login.  
 - **✅ Validation**: Middleware ensures tokens are valid and unexpired.  
@@ -49,13 +49,13 @@ The Library API uses **JWT** for secure authentication.
 - **🚫 Revocation**: Tokens are invalidated upon use.
 
 #
-# USER SIDE
+# 👤 **User Side** 
 ## USER REGISTER
 -  **Endpoint**:  `user/register`
 -  **Method**: `POST`
 -  **Description**: User can input their username and password to create an account that will be saved on the database. 
 
-### Sample JSON request:
+### 📥 Sample JSON request:
 ```bash
   {
     "username": "Super",
@@ -87,7 +87,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Method**: `POST`
 -  **Description**: User can input their username and password to access their created account based on their ceredentials saved on the database to create a session. 
 
-### Sample JSON request:
+### 📥 Sample JSON request:
 ```bash
   {
     "username": "Super",
@@ -121,7 +121,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Method**: `POST`
 -  **Description**: After the login of users, their credentials will be authenticated for them to access different functionalities.
 
-### Sample JSON request:
+### 📥 Sample JSON request:
 ```bash
   {
     "username": "Super",
@@ -156,7 +156,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Method**: `POST`
 -  **Description**: The user can view their own account with their username and password that is hased using SHA256, but it will require them a token  from authentication.
 
-### Sample JSON request:
+### 📥 Sample JSON request:
 ```bash
       {
           "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
@@ -191,7 +191,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Method**: `POST`
 -  **Description**: Authors can input their username and password to create an account that will be saved on the database. 
 
-### Sample JSON request:
+### 📥 Sample JSON request:
 ```bash
   {
     "username": "Son",
@@ -223,7 +223,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Method**: `POST`
 -  **Description**: Author can login their own account based on their regestration credentials that is saved on the database.
 
-### Sample JSON request:
+### 📥 Sample JSON request:
 ```bash
   {
     "username": "Son",
@@ -257,7 +257,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Method**: `POST`
 -  **Description**: After the login of Authors, their credentials will be authenticated for them to access different functionalities.
 
-### Sample JSON request:
+### 📥 Sample JSON request:
 ```bash
   {
     "username": "Son",
@@ -291,7 +291,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Method**: `POST`
 -  **Description**: After the author got authenticated the author can publish their own books and add their own title for their books.
 
-### Sample JSON request:
+### 📥 Sample JSON request:
 ```bash
 {
     "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9",
@@ -324,7 +324,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Method**: `DELETE`
 -  **Description**: With proper authentication the author can delete their own books they posted.
 
-### Sample JSON request:
+### 📥 Sample JSON request:
 ```bash
   {
       "bookid": 28,
@@ -374,7 +374,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Method**: `POST`
 -  **Description**: With proper authentication the users and authors can view the books being posted by the authors or other authors
 
-### Sample JSON request:
+### 📥 Sample JSON request:
 ```bash
     {
         "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
@@ -410,7 +410,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Method**: `POST`
 -  **Description**: With proper authentication the users and authors can view Authors or Athors can view other Authors that has created an account.
 
-### Sample JSON request:
+### 📥 Sample JSON request:
 ```bash
   {
       "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
@@ -453,7 +453,7 @@ The Library API uses **JWT** for secure authentication.
 -  **Method**: `POST`
 -  **Description**: With proper authentication the users and authors can view Authors and the books that they posted.
 
-### Sample JSON request:
+### 📥 Sample JSON request:
 ```bash
   {
       "authorid" : 19,
